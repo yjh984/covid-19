@@ -51,6 +51,11 @@
   border-radius: 5px;
 }
 
+.scale_btn:hover{
+  background-color: #d49466;
+  color: white;
+}
+
 /* section{
   position: static;
   padding: 1rem;
