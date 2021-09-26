@@ -27,7 +27,11 @@ function makeDayData(searchNations, normalize, dataArray) {
   return a;
   });
 
-  const labels=dayCaseArray[0].map(a=>`${a.year}/ ${a.month+1}/ ${a.date}`);
+  const labels=dayCaseArray[0].map(a=>{
+    // console.log(String(a.year).substr(2,2))
+    return`${a.month+1}/ ${a.date}`;
+  });
+  
   labels.splice(0,1);
   for (let i=dayCaseArray.length; i<5; i++){
       dayCaseArray[i]=undefined;
@@ -38,12 +42,14 @@ function makeDayData(searchNations, normalize, dataArray) {
 
   const completedData= {
     labels,
+    options:{ title:{display:true,text:'xxxx'}},
     datasets:[
       {
         label: `${searchNations[0]}*${1/normalize[0]}`,
         borderColor: 'blue',
         fill: false,
         data: dayCaseArray[0].map(a=>a.confirmed),
+
       },
       {
         label: dayCaseArray[1]===undefined? 'N/A':`${searchNations[1]}*${1/normalize[1]}`,

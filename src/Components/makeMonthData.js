@@ -27,7 +27,7 @@ function makeMonthData(searchNations,normalize,dataArray) {
     monthData[i]=tempData;
   });
     // console.log(arr));
-    const labels=monthData[0].map(a=>`${a.year}/ ${a.month+1}`);
+    const labels=monthData[0].map(a=>`${String(a.year).substr(2,2)}/ ${a.month+1}`);
     for (let i=monthData.length; i<5; i++){
         monthData[i]=undefined;
       //   console.log(i);
@@ -36,7 +36,7 @@ function makeMonthData(searchNations,normalize,dataArray) {
       labels,
       datasets:[
         {
-          label: `${searchNations[0]}${1/normalize[0]}`,
+          label: `${searchNations[0]}*${1/normalize[0]}`,
           backgroundColor:'blue',
           borderColor: 'blue',
           fill: false,
