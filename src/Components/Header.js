@@ -75,12 +75,12 @@ function Header() {
       </div>
       {isAbroad?
       <div className='header2'>
-        <label>KR<input placeholder='1' className='norm' type='text' onChange={onNormalizeKR}/></label>
-        <label>US<input placeholder='1' className='norm' type='text' onChange={onNormalizeUS}/></label>
-        <label>DE<input placeholder='1' className='norm' type='text' onChange={onNormalizeDE}/></label>
-        <label>CZ<input placeholder='1' className='norm' type='text' onChange={onNormalizeCZ}/></label>
-        <label>CN<input placeholder='1' className='norm' type='text' onChange={onNormalizeCN}/></label>
-        <button onClick={onRerendering}>적용</button>
+        <label>KR<input placeholder='1' className='scale' type='text' onChange={onNormalizeKR}/></label>
+        <label>US<input placeholder='1' className='scale' type='text' onChange={onNormalizeUS}/></label>
+        <label>DE<input placeholder='1' className='scale' type='text' onChange={onNormalizeDE}/></label>
+        <label>CZ<input placeholder='1' className='scale' type='text' onChange={onNormalizeCZ}/></label>
+        <label>CN<input placeholder='1' className='scale' type='text' onChange={onNormalizeCN}/></label>
+        <button className='scale_btn' onClick={onRerendering}>적용</button>
       </div>
       :
       ''}

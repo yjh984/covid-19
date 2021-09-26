@@ -74,12 +74,12 @@ function ContentsWorld() {
             legend:{display:true, position:'bottom'}}
           }/>
           <h3>코로나 월별 발생 현황</h3>
-          <Line data={confirmedMonth} options={
+          <Line className='chart-line-day' data={confirmedMonth} options={
             {title:{display: true, text:"월간환자수 추이", fontsize:16 },
             legend:{display:true, position:'bottom'}}
           }/>
           <h3>코로나 월별 누적 현황</h3>
-          <Bar data={confirmedAccMonth} options={
+          <Bar className='chart-line-day' data={confirmedAccMonth} options={
             {title:{display: true, text:"new Cases", fontsize:100 }}
           }/>
         </div>
