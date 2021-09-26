@@ -36,35 +36,35 @@ function makeMonthData(searchNations,normalize,dataArray) {
       labels,
       datasets:[
         {
-          label: `${searchNations[0]} Trend * ${1/normalize[0]}`,
+          label: `${searchNations[0]}${1/normalize[0]}`,
           backgroundColor:'blue',
           borderColor: 'blue',
           fill: false,
           data: monthData[0].map(a=>a.confirmed*normalize[0]),
         },
         {
-          label: monthData[1]===undefined? 'N/A':`${searchNations[1]} Trend * ${1/normalize[1]}`,
+          label: monthData[1]===undefined? 'N/A':`${searchNations[1]}*${1/normalize[1]}`,
           backgroundColor:'gray',
           borderColor: 'gray',
           fill: false,
           data: monthData[1]===undefined? null:monthData[1].map(a=>a.confirmed*normalize[1]),
         },
         {
-          label: monthData[2]===undefined? 'N/A':`${searchNations[2]} Trend * ${1/normalize[2]}`,
+          label: monthData[2]===undefined? 'N/A':`${searchNations[2]}*${1/normalize[2]}`,
           backgroundColor:'#036384',
           borderColor: '#036384',
           fill: false,
           data: monthData[2]===undefined? null:monthData[2].map(a=>a.confirmed*normalize[2]),
         },
         {
-          label: monthData[3]===undefined? 'N/A':`${searchNations[3]} Trend * ${1/normalize[3]}`,
+          label: monthData[3]===undefined? 'N/A':`${searchNations[3]}*${1/normalize[3]}`,
           backgroundColor:'green',
           borderColor: 'green',
           fill: false,
           data: monthData[3]===undefined? null:monthData[3].map(a=>a.confirmed*normalize[3]),
         },
         {
-          label: monthData[4]===undefined? 'N/A':`${searchNations[4]} Trend * ${1/normalize[4]}`,
+          label: monthData[4]===undefined? 'N/A':`${searchNations[4]}*${1/normalize[4]}`,
           backgroundColor:'black',
           borderColor: 'black',
           fill: false,
@@ -76,7 +76,7 @@ function makeMonthData(searchNations,normalize,dataArray) {
       labels,
       datasets:[
         {
-          label: `${searchNations[0]} Trend * ${normalize[0]}`,
+          label: `${searchNations[0]}*${normalize[0]}`,
           borderColor: 'blue',
           fill: false,
           data: monthData[0].map((a,i,arr)=>{
@@ -84,7 +84,7 @@ function makeMonthData(searchNations,normalize,dataArray) {
             return (a.confirmed-arr[i-1].confirmed)*normalize[0];}),
         },
         {
-          label: monthData[1]===undefined? 'N/A':`${searchNations[1]} Trend * ${1/normalize[1]}`,
+          label: monthData[1]===undefined? 'N/A':`${searchNations[1]}*${1/normalize[1]}`,
           borderColor: 'gray',
           fill: false,
           data: monthData[1]===undefined? null:monthData[1].map((a,i,arr)=>{
@@ -92,7 +92,7 @@ function makeMonthData(searchNations,normalize,dataArray) {
             return (a.confirmed-arr[i-1].confirmed)*normalize[1];}),
         },
         {
-          label: monthData[2]===undefined? 'N/A':`${searchNations[2]} Trend * ${1/normalize[2]}`,
+          label: monthData[2]===undefined? 'N/A':`${searchNations[2]}*${1/normalize[2]}`,
           borderColor: '#036384',
           fill: false,
           data: monthData[2]===undefined? null:monthData[2].map((a,i,arr)=>{
@@ -100,7 +100,7 @@ function makeMonthData(searchNations,normalize,dataArray) {
             return (a.confirmed-arr[i-1].confirmed)*normalize[2];}),
         },
         {
-          label: monthData[3]===undefined? 'N/A':`${searchNations[3]} Trend * ${1/normalize[3]}`,
+          label: monthData[3]===undefined? 'N/A':`${searchNations[3]}*${1/normalize[3]}`,
           borderColor: 'green',
           fill: false,
           data: monthData[3]===undefined? null:monthData[3].map((a,i,arr)=>{
@@ -108,7 +108,7 @@ function makeMonthData(searchNations,normalize,dataArray) {
             return (a.confirmed-arr[i-1].confirmed)*normalize[3];}),
         },
         {
-          label: monthData[4]===undefined? 'N/A':`${searchNations[4]} Trend * ${1/normalize[4]}`,
+          label: monthData[4]===undefined? 'N/A':`${searchNations[4]}*${1/normalize[4]}`,
           borderColor: 'black',
           fill: false,
           data: monthData[4]===undefined? null:monthData[4].map((a,i,arr)=>{
