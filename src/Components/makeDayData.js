@@ -75,6 +75,12 @@ function makeDayData(searchNations, normalize, dataArray) {
         fill: false,
         data: dayCaseArray[4]===undefined? null:dayCaseArray[4].map(a=>a.confirmed),
       },
+      {
+        label: dayCaseArray[5]===undefined? 'N/A':`${searchNations[5]}*${1/normalize[5]}`,
+        borderColor: 'red',
+        fill: false,
+        data: dayCaseArray[5]===undefined? null:dayCaseArray[5].map(a=>a.confirmed),
+      },
     ]
   };
 

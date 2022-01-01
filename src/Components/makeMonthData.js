@@ -70,6 +70,13 @@ function makeMonthData(searchNations,normalize,dataArray) {
           fill: false,
           data: monthData[4]===undefined? null:monthData[4].map(a=>a.confirmed*normalize[4]),
         },
+        {
+          label: monthData[5]===undefined? 'N/A':`${searchNations[5]}*${1/normalize[5]}`,
+          backgroundColor:'red',
+          borderColor: 'red',
+          fill: false,
+          data: monthData[5]===undefined? null:monthData[5].map(a=>a.confirmed*normalize[5]),
+        },
       ]
     };
     const completedMonth = {
@@ -114,6 +121,14 @@ function makeMonthData(searchNations,normalize,dataArray) {
           data: monthData[4]===undefined? null:monthData[4].map((a,i,arr)=>{
             if(i===0){return 0;}
             return (a.confirmed-arr[i-1].confirmed)*normalize[4];}),
+        },
+        {
+          label: monthData[5]===undefined? 'N/A':`${searchNations[5]}*${1/normalize[5]}`,
+          borderColor: 'red',
+          fill: false,
+          data: monthData[5]===undefined? null:monthData[5].map((a,i,arr)=>{
+            if(i===0){return 0;}
+            return (a.confirmed-arr[i-1].confirmed)*normalize[5];}),
         },
       ]
     };

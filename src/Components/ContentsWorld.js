@@ -13,7 +13,7 @@ function ContentsWorld() {
   const [confirmedDay,setConfirmedDay]=useState({});
   const [isLoading,setIsLoading]=useState(false);
   const location=useLocation();
-  let normalize=[1,1,1,1,1];
+  let normalize=[1,1,1,1,1,1];
   let isInit=false;
 
   // console.log(location.state.normalize);
@@ -39,7 +39,7 @@ function ContentsWorld() {
   // setIsLoading(false);
 
   useEffect(() => {
-    const searchNations=['KR','US','DE','CZ','CN'];
+    const searchNations=['KR','US','DE','CZ','CN','JP'];
     const fetchevent = async ()=>{
       const data=[];
       let i=0;

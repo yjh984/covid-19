@@ -9,10 +9,27 @@ function Header() {
   const history=useHistory();
   const [isAbroad,setIsAbroad]=useState(false);
   // let isAbroad=false;
-  let normalize=[1,1,1,1,1];
+  let normalize=[1,1,1,1,1,1];
   // const {normalize, setNormalize}=useState(1,1,1,1,1);
+  let bDomAbroad = false;
 
-  function onSelect(e){
+  function onSelect(){
+    console.log(bDomAbroad);
+    if(bDomAbroad===false){
+      // console.log('Domestic...')
+      bDomAbroad=true;
+      setIsAbroad(false);
+      history.push(`/`);
+    } else{
+      // console.log('Abroad...')
+      bDomAbroad=false;
+      setIsAbroad(true);
+      history.push('/world');
+    }
+  }
+
+  /*
+  function onSelect(){
     // console.log(e.target.value);
     if(e.target.value==='dom'){
       // console.log('Domestic...')
@@ -29,6 +46,7 @@ function Header() {
       history.push('/world');
     }
   }
+  */
 
   function onRerendering() {
     // history.push('/');
@@ -62,16 +80,19 @@ function Header() {
     // console.log(e.target.value);
     normalize[4]=e.target.value;
   }
+  function onNormalizeJP(e) {
+    // console.log(e.target.value);
+    normalize[5]=e.target.value;
+  }
 
 
   return (
     <header className='header'>
       <div className='header1'>
         <h1>COVID-19</h1>
-        <select onChange={onSelect}>
-          <option value='dom'>국내</option>
-          <option value='abroad'>해외</option>
-        </select>
+        <button onClick={onSelect}>
+          <option value='dom'>국내/해외</option>
+        </button>
       </div>
       {isAbroad?
       <div className='header2'>
@@ -80,6 +101,7 @@ function Header() {
         <label>DE<input placeholder='1' className='scale' type='text' onChange={onNormalizeDE}/></label>
         <label>CZ<input placeholder='1' className='scale' type='text' onChange={onNormalizeCZ}/></label>
         <label>CN<input placeholder='1' className='scale' type='text' onChange={onNormalizeCN}/></label>
+        <label>JP<input placeholder='1' className='scale' type='text' onChange={onNormalizeJP}/></label>
         <button className='scale_btn' onClick={onRerendering}>적용</button>
       </div>
       :
