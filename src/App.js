@@ -3,7 +3,8 @@ import './App.css';
 import Header from './Components/Header';
 import ContentsWorld from './Components/ContentsWorld';
 import ContentsDom from './Components/ContentsDom';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+// import Switch from 'switch';
 
 
 function App() {
@@ -11,14 +12,15 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header/>
-        <Switch>
-          <Route exact path='/'>
-            <ContentsDom/>
-          </Route>
-          <Route path='/world'>
-            <ContentsWorld/>
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path='/covid-19' element={<ContentsDom/>}/>
+            {/* <ContentsDom/> */}
+          {/* </Route> */}
+          <Route path='/world' element={<ContentsWorld/>}/>
+            {/* <ContentsWorld/> */}
+          {/* </Route> */}
+          {/* <Route exact path='/' component={PageNotFound} /> */}
+        </Routes>
       </div>
     </BrowserRouter>
   )

@@ -1,30 +1,30 @@
 import React from 'react'
 import { useState} from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 
 
 let isInit=true;
+let bDomAbroad = true;
 
 function Header() {
-  const history=useHistory();
+  const navigate=useNavigate();
   const [isAbroad,setIsAbroad]=useState(false);
   // let isAbroad=false;
   let normalize=[1,1,1,1,1,1];
   // const {normalize, setNormalize}=useState(1,1,1,1,1);
-  let bDomAbroad = false;
 
-  function onSelect(){
+  function onClickDA(){
     console.log(bDomAbroad);
     if(bDomAbroad===false){
-      // console.log('Domestic...')
+      console.log('Domestic...')
       bDomAbroad=true;
       setIsAbroad(false);
-      history.push(`/`);
+      navigate(`/covid-19`);
     } else{
-      // console.log('Abroad...')
+      console.log('Abroad...')
       bDomAbroad=false;
       setIsAbroad(true);
-      history.push('/world');
+      navigate('/world');
     }
   }
 
@@ -50,7 +50,7 @@ function Header() {
 
   function onRerendering() {
     // history.push('/');
-    history.push({
+    navigate({
       pathname: `/world`,
       state:{normalize:normalize, isInit:isInit}
      });
@@ -90,10 +90,12 @@ function Header() {
     <header className='header'>
       <div className='header1'>
         <h1>COVID-19</h1>
-        <button onClick={onSelect}>
-          <option value='dom'>국내/해외</option>
+        <button onClick={onClickDA}>
+          {/* <option value='dom'>국내/해외</option> */}
+          국내/해외
         </button>
       </div>
+
       {isAbroad?
       <div className='header2'>
         <label>KR<input placeholder='1' className='scale' type='text' onChange={onNormalizeKR}/></label>

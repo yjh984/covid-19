@@ -33,7 +33,7 @@ function makeDayData(searchNations, normalize, dataArray) {
   });
   
   labels.splice(0,1);
-  for (let i=dayCaseArray.length; i<5; i++){
+  for (let i=dayCaseArray.length; i<6; i++){
       dayCaseArray[i]=undefined;
     //   console.log(i);
   }
@@ -42,7 +42,7 @@ function makeDayData(searchNations, normalize, dataArray) {
 
   const completedData= {
     labels,
-    options:{ title:{display:true,text:'xxxx'}},
+    // options:{ title:{display:true,text:'xxxx'}},
     datasets:[
       {
         label: `${searchNations[0]}*${1/normalize[0]}`,

@@ -28,7 +28,7 @@ function makeMonthData(searchNations,normalize,dataArray) {
   });
     // console.log(arr));
     const labels=monthData[0].map(a=>`${String(a.year).substr(2,2)}/ ${a.month+1}`);
-    for (let i=monthData.length; i<5; i++){
+    for (let i=monthData.length; i<6; i++){
         monthData[i]=undefined;
       //   console.log(i);
     }
@@ -37,42 +37,42 @@ function makeMonthData(searchNations,normalize,dataArray) {
       datasets:[
         {
           label: `${searchNations[0]}*${1/normalize[0]}`,
-          backgroundColor:'blue',
+          // backgroundColor:'blue',
           borderColor: 'blue',
           fill: false,
           data: monthData[0].map(a=>a.confirmed*normalize[0]),
         },
         {
           label: monthData[1]===undefined? 'N/A':`${searchNations[1]}*${1/normalize[1]}`,
-          backgroundColor:'gray',
+          // backgroundColor:'gray',
           borderColor: 'gray',
           fill: false,
           data: monthData[1]===undefined? null:monthData[1].map(a=>a.confirmed*normalize[1]),
         },
         {
           label: monthData[2]===undefined? 'N/A':`${searchNations[2]}*${1/normalize[2]}`,
-          backgroundColor:'#036384',
+          // backgroundColor:'#036384',
           borderColor: '#036384',
           fill: false,
           data: monthData[2]===undefined? null:monthData[2].map(a=>a.confirmed*normalize[2]),
         },
         {
           label: monthData[3]===undefined? 'N/A':`${searchNations[3]}*${1/normalize[3]}`,
-          backgroundColor:'green',
+          // backgroundColor:'green',
           borderColor: 'green',
           fill: false,
           data: monthData[3]===undefined? null:monthData[3].map(a=>a.confirmed*normalize[3]),
         },
         {
           label: monthData[4]===undefined? 'N/A':`${searchNations[4]}*${1/normalize[4]}`,
-          backgroundColor:'black',
+          // backgroundColor:'black',
           borderColor: 'black',
           fill: false,
           data: monthData[4]===undefined? null:monthData[4].map(a=>a.confirmed*normalize[4]),
         },
         {
           label: monthData[5]===undefined? 'N/A':`${searchNations[5]}*${1/normalize[5]}`,
-          backgroundColor:'red',
+          // backgroundColor:'red',
           borderColor: 'red',
           fill: false,
           data: monthData[5]===undefined? null:monthData[5].map(a=>a.confirmed*normalize[5]),
