@@ -73,7 +73,7 @@ function ContentsWorld() {
   // setIsLoading(false);
 
   useEffect(() => {
-    const searchNations=['KR','US','DE','CZ','CN','JP'];
+    const searchNations=['KR','JP','CN','CZ','DE','US'];
     const normalize=[1,1,1,1,1,1];
     const fetchevent = async ()=>{
       const data=[];

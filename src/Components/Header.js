@@ -60,30 +60,30 @@ function Header() {
     // console.log('history~~')
   }
 
-  function onNormalizeKR(e) {
-    // console.log(e.target.value);
-    normalize[0]=e.target.value;
-  }
-  function onNormalizeUS(e) {
-    // console.log(e.target.value);
-    normalize[1]=e.target.value;
-  }
-  function onNormalizeDE(e) {
-    // console.log(e.target.value);
-    normalize[2]=e.target.value;
-  }
-  function onNormalizeCZ(e) {
-    // console.log(e.target.value);
-    normalize[3]=e.target.value;
-  }
-  function onNormalizeCN(e) {
-    // console.log(e.target.value);
-    normalize[4]=e.target.value;
-  }
-  function onNormalizeJP(e) {
-    // console.log(e.target.value);
-    normalize[5]=e.target.value;
-  }
+  // function onNormalizeKR(e) {
+  //   // console.log(e.target.value);
+  //   normalize[0]=e.target.value;
+  // }
+  // function onNormalizeUS(e) {
+  //   // console.log(e.target.value);
+  //   normalize[1]=e.target.value;
+  // }
+  // function onNormalizeDE(e) {
+  //   // console.log(e.target.value);
+  //   normalize[2]=e.target.value;
+  // }
+  // function onNormalizeCZ(e) {
+  //   // console.log(e.target.value);
+  //   normalize[3]=e.target.value;
+  // }
+  // function onNormalizeCN(e) {
+  //   // console.log(e.target.value);
+  //   normalize[4]=e.target.value;
+  // }
+  // function onNormalizeJP(e) {
+  //   // console.log(e.target.value);
+  //   normalize[5]=e.target.value;
+  // }
 
 
   return (
@@ -96,8 +96,8 @@ function Header() {
         </button>
       </div>
 
-      {isAbroad?
-      <div className='header2'>
+      {isAbroad? "":""}
+      {/* <div className='header2'>
         <label>KR<input placeholder='1' className='scale' type='text' onChange={onNormalizeKR}/></label>
         <label>US<input placeholder='1' className='scale' type='text' onChange={onNormalizeUS}/></label>
         <label>DE<input placeholder='1' className='scale' type='text' onChange={onNormalizeDE}/></label>
@@ -107,7 +107,7 @@ function Header() {
         <button className='scale_btn' onClick={onRerendering}>적용</button>
       </div>
       :
-      ''}
+      ''} */}
     </header>
   )
 }

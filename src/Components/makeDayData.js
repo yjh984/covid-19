@@ -45,38 +45,39 @@ function makeDayData(searchNations, normalize, dataArray) {
     // options:{ title:{display:true,text:'xxxx'}},
     datasets:[
       {
-        label: `${searchNations[0]}*${1/normalize[0]}`,
+        // label: `${searchNations[0]}*${1/normalize[0]}`,
+        label: `${searchNations[0]}`,
         borderColor: 'blue',
         fill: false,
         data: dayCaseArray[0].map(a=>a.confirmed),
 
       },
       {
-        label: dayCaseArray[1]===undefined? 'N/A':`${searchNations[1]}*${1/normalize[1]}`,
+        label: dayCaseArray[1]===undefined? 'N/A':`${searchNations[1]}`,
         borderColor: 'gray',
         fill: false,
         data: dayCaseArray[1]===undefined? null:dayCaseArray[1].map(a=>a.confirmed),
       },
       {
-        label: dayCaseArray[2]===undefined? 'N/A':`${searchNations[2]}*${1/normalize[2]}`,
+        label: dayCaseArray[2]===undefined? 'N/A':`${searchNations[2]}`,
         borderColor: '#036384',
         fill: false,
         data: dayCaseArray[2]===undefined? null:dayCaseArray[2].map(a=>a.confirmed),
       },
       {
-        label: dayCaseArray[3]===undefined? 'N/A':`${searchNations[3]}*${1/normalize[3]}`,
+        label: dayCaseArray[3]===undefined? 'N/A':`${searchNations[3]}`,
         borderColor: 'green',
         fill: false,
         data: dayCaseArray[3]===undefined? null:dayCaseArray[3].map(a=>a.confirmed),
       },
       {
-        label: dayCaseArray[4]===undefined? 'N/A':`${searchNations[4]}*${1/normalize[4]}`,
+        label: dayCaseArray[4]===undefined? 'N/A':`${searchNations[4]}`,
         borderColor: 'black',
         fill: false,
         data: dayCaseArray[4]===undefined? null:dayCaseArray[4].map(a=>a.confirmed),
       },
       {
-        label: dayCaseArray[5]===undefined? 'N/A':`${searchNations[5]}*${1/normalize[5]}`,
+        label: dayCaseArray[5]===undefined? 'N/A':`${searchNations[5]}`,
         borderColor: 'red',
         fill: false,
         data: dayCaseArray[5]===undefined? null:dayCaseArray[5].map(a=>a.confirmed),

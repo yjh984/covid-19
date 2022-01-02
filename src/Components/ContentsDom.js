@@ -68,8 +68,8 @@ function ContentsDom() {
   
 
   useEffect(() => {
-    const searchNations=['KR'];  
-    const normalize=[1];
+    const searchNations=['KR','JP'];  
+    const normalize=[1,1];
     const fetchevent = async ()=>{
       const data=[];
       let i=0;
